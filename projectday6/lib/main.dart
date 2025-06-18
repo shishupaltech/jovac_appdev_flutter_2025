@@ -32,6 +32,29 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [],
         ),
+
+        bottomNavigationBar: BottomNavigationBar(
+            items:[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+                tooltip: 'Go to Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: 'Search',
+                tooltip: 'Go to Search',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+                tooltip: 'Go to Profile',
+              )
+
+
+
+            ]
+        ),
       ),
 
     );
