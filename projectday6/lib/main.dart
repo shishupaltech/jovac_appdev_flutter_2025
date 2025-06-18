@@ -55,6 +55,7 @@ class MyApp extends StatelessWidget {
         )
         ,
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -71,6 +72,12 @@ class MyApp extends StatelessWidget {
               label: 'Profile',
               tooltip: 'Go to Profile',
             ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+              tooltip: 'Go to Profile',
+            ),
+
           ],
         ),
       ),
