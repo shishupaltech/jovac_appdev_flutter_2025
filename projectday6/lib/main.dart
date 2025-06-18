@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.person),
+          // leading: Icon(Icons.person),
           title: Text('Day 6'),
           actions: [
             Icon(Icons.login),
@@ -38,6 +38,22 @@ class MyApp extends StatelessWidget {
           },
           child: Icon(Icons.add),
         ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(child: Text('Hello')),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+              )
+            ],
+          ),
+        )
+        ,
         bottomNavigationBar: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
