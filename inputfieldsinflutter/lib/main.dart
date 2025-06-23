@@ -28,7 +28,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  final _formKey = GlobalKey<FormState>();
+  bool _isChecked = false;
+  double _sliderValue = 20.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,23 +38,88 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(10),
-              child: TextField(
-                decoration: InputDecoration(
-                  label: Text('User Name'),
-                  prefixIcon: Icon(Icons.person),
-                  suffixIcon: Icon(Icons.check),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(16),
+        child: Form(
+            key: _formKey,
+            child:Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('All the TextField here...',style: TextStyle(fontSize: 20),),
+                // TextField(
+                //
+                //   decoration:InputDecoration(
+                //     hintText: 'Enter your name',
+                //   ) ,
+                // )
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Enter your name',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    prefixIcon: Icon(Icons.person),
+                    
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter some text';
+
+                    }
+                  }
                 ),
-              ),
+                SizedBox(height: 10,),
+                Text('Simple checkbox'),
+                Checkbox(value: _isChecked,
+                    onChanged: (value)=>setState(()=>_isChecked=value!),
+                ),
+                SizedBox(height: 20,),
+                Text('Checkbox listtile'),
+                CheckboxListTile(
+                    title: Text("Accept Terms & conditions"),
+                    subtitle: Text('You must accept before proceeding'),
+                    value: _isChecked,
+                    onChanged: (value)=>setState(()=>_isChecked=value!),
+                    activeColor: Colors.green,
+                    controlAffinity: ListTileControlAffinity.leading,
+                ),
+                SizedBox(height: 20,),
+                Text('Switch'),
+                Switch(value: _isChecked,
+                    onChanged: (value)=>setState(()=>_isChecked=value),
+                ),
+
+                SizedBox(height: 20,),
+                Text('SwitchListTile'),
+                SwitchListTile(
+                    title: Text("Accept Terms & conditions"),
+                    subtitle: Text('You must accept before proceeding'),
+                    value: _isChecked,
+                    onChanged: (value)=>setState(()=>_isChecked=value),
+                    activeColor: Colors.green,
+                    controlAffinity: ListTileControlAffinity.leading,
+                ),
+                SizedBox(height: 20,),
+                Text('Switch.adaptive'),
+                Switch.adaptive(value: _isChecked,
+                    onChanged: (value)=>setState(()=>_isChecked=value),
+                ),
+                SizedBox(height: 20,),
+                Text('Slider'),
+                Text('Slider Value ${_sliderValue.toInt()}'),
+                Slider(
+
+                    value: _sliderValue,
+                    min: 0,
+                    max: 100,
+                    divisions: 5,
+                    label: _sliderValue.round().toString(),
+                    onChanged: (val)=>setState(()=>_sliderValue=val),
+                )
+
+
+              ],
             )
-          ],
         ),
       ),
 
