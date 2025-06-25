@@ -27,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-   String _selectedValue = 'Item 1';
+   String _selectedValue = 'Item 2';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
