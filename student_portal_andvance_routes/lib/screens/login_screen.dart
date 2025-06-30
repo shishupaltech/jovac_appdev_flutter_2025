@@ -80,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          onPressed: () => Navigator.pushReplacementNamed(context, AppRoutes.dashboard),
+                          onPressed: () => Navigator.pushReplacementNamed(context, AppRoutes.dashboard),// '/dashboard'
                           child: Text('Login', style: TextStyle(fontSize: 16)),
                         ),
                       ),

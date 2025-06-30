@@ -52,7 +52,7 @@ class DashboardScreen extends StatelessWidget {
               subtitle: 'See and edit your personal information.',
               icon: Icons.person_outline,
               color: Colors.brown,
-              onTap: () => Navigator.pushNamed(context, AppRoutes.profile),
+              onTap: () => Navigator.pushNamed(context, AppRoutes.profile),//'/profile'
             ),
             SizedBox(height: 16),
             _buildDashboardCard(
