@@ -43,11 +43,11 @@ class StudentPortalApp extends StatelessWidget {
             return MaterialPageRoute(
               builder: (_)=> CourseListScreen(),
             );
-          // case AppRoutes.courseDetail:
-          //   final course = settings.arguments as Course;
-          //   return MaterialPageRoute(
-          //     builder: (_)=>CourseDetailScreen(course: course),
-          //   );
+          case AppRoutes.courseDetail:
+            final course = settings.arguments as Course;
+            return MaterialPageRoute(
+              builder: (_)=>CourseDetailScreen(course: course),
+            );
           default:
             return MaterialPageRoute(
               builder:(context)=> Scaffold(
